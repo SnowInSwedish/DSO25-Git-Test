@@ -1,24 +1,25 @@
-name: Run Unit test
+name: Run Unit Tests
+
 on:
   push:
-    Branches: 
+    branches:
       - main
 
 jobs:
   build:
-    runs-on: ububtu-latest
-    
+    runs-on: ubuntu-latest
+
     steps:
-    - name: checkout repository
-    uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: set up .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '9.x'
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
 
-    -name: restore dependecies
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-    -name: Run unit test
-      run: dotnet test
+      - name: Run unit tests
+        run: dotnet test
