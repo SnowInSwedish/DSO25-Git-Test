@@ -15,9 +15,7 @@ public class Calculator
         return 0;
     }
 
-    public int Divide(int a, int b)
-    {
-        return 0;
-    }
+
+    
 
 }
